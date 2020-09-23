@@ -61,6 +61,9 @@ class KingMexaw():
                 "user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"
                 })
             change_requests = MySession.post(url_change,data=self.data_change).text
+            with open("newcombo.txt") as wr:
+                wr.write(self.username+":"+self.password+"\n")
+               
             print(change_requests)
             counter +=1
         elif loginreq.status_code == 429:
